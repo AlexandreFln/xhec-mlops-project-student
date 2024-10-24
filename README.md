@@ -72,6 +72,31 @@ Ensure that you place the dataset in the correct folder (e.g., a `data/` directo
 
 After completing these steps, you will be ready to run the project and start working on industrializing the abalone age prediction model.
 
+### 4. Set Up Prefect for Workflow Orchestration
+
+To set up Prefect for orchestrating the workflow, you will need to configure the Prefect server.
+
+First, set the Prefect API URL with the following command:
+
+`prefect config set PREFECT_API_URL=http://0.0.0.0:4200/api`
+
+This will ensure that Prefect communicates with the correct API endpoint.
+
+Next, start the Prefect server by running:
+
+`prefect server start --host 0.0.0.0`
+
+This command will launch the Prefect server locally, allowing you to track and manage workflows for the project.
+
+Once the server is up and running, you are ready to start orchestrating your workflows and accessing it on http://0.0.0.0:4200/.
+
+### 5. Run the Deployment Script
+
+In a new terminal, navigate to the project directory and run the deployment script to deploy the model. Use the following command:
+
+`python src.modelling.deployment.py`
+
+This script will handle the deployment process for the model. Running it in parallel with the Prefect server ensures that the orchestration and deployment are synchronized.
 
 ## Deliverables and notation
 
