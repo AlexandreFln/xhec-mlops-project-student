@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/charl/OneDrive/Documents/ml_ops/final_project/xhec-mlops-project-student/notebooks/mlruns/585163062762099395/f20b203f6e3c4b278a4374b20a8af9e5/artifacts
+end_time: 1729767836163
+entry_point_name: ''
+experiment_id: '585163062762099395'
+lifecycle_stage: active
+run_id: f20b203f6e3c4b278a4374b20a8af9e5
+run_name: rogue-goose-920
+run_uuid: f20b203f6e3c4b278a4374b20a8af9e5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729767816814
+status: 3
+tags: []
+user_id: charl
