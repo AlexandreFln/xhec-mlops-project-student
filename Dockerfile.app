@@ -9,13 +9,18 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copier les fichiers de l'application
-COPY src/web_service /app
+COPY src/web_service /app/src/web_service
+COPY bin/run_services.sh /app/bin/run_services.sh
+COPY requirements.txt /app/requirements.txt
 
 # Installer les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Exposer le port de l'API
-EXPOSE 8000
+# Rendre le script exécutable
+RUN chmod +x /app/bin/run_services.sh
 
-# Commande pour lancer l'application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Exposer les ports de l'API et du serveur Prefect
+EXPOSE 8001 4201
+
+# Commande pour lancer les services
+CMD ["/app/bin/run_services.sh"]
