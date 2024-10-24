@@ -45,6 +45,13 @@ and navigate into the correct directory
 
 
 ### 2. Set Up the Conda Environment
+
+First, generate the `requirements.txt` from `requirements.in` by running the following command:
+
+`pip-compile requirements.in`
+
+This will create the requirements.txt file, which is needed for the environment setup.
+
 This project uses an `environment.yml` file to manage dependencies. To create the environment, run the following command:
 
 `conda env create --file environment.yml`
