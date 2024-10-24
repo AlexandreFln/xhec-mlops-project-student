@@ -7,4 +7,3 @@ pydantic<2
 mlflow
 fastapi
 pyarrow
-pickle

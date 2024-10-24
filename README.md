@@ -45,6 +45,13 @@ and navigate into the correct directory
 
 
 ### 2. Set Up the Conda Environment
+
+First, generate the `requirements.txt` from `requirements.in` by running the following command:
+
+`pip-compile requirements.in`
+
+This will create the requirements.txt file, which is needed for the environment setup.
+
 This project uses an `environment.yml` file to manage dependencies. To create the environment, run the following command:
 
 `conda env create --file environment.yml`
@@ -137,8 +144,9 @@ You can follow the order of the branches to build your project and collaborate.
    > # At this point, you might have a VIM window opening, you can close it using the command ":wq"
    > git push
    > ```
+    - Read and **follow** all the instructions in the the PR instructions file
     - Do as many commits as necessary on the branch_number_i to perform the task indicated in the corresponding markdown file
-    - Open a pull request from this branch to the main branch of your forked repository
+    - Open **A SINGLE** pull request from this branch to the main branch of your forked repository
     - Once done, merge the pull request in the main branch of your forked repository
 
 ### Pull requests in this project
