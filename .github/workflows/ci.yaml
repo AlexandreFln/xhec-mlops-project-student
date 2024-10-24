@@ -28,5 +28,8 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Install pre-commit
+        run: pip install pre-commit
+
       - name: Run Pre-commit hooks (formatting, linting & tests)
         run: pre-commit run --all-files --show-diff-on-failure
