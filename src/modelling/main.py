@@ -19,7 +19,7 @@ def main(trainset_path: Path) -> None:
     model = create_and_train_model(x, y)
 
     # Pickle model --> Save the model in the pkl format in the specified folder
-    save_pickle("../web_service/local_objects", model)
+    save_pickle("src/web_service/local_objects", model)
 
 
 if __name__ == "__main__":

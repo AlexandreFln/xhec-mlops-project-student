@@ -12,5 +12,6 @@ def load_pickle(path: str):
 
 def save_pickle(path: str, obj: Any):
     """Save pickle object."""
+    path = path + "local_model.pkl"
     with open(path, "wb") as f:
         pickle.dump(obj, f)
