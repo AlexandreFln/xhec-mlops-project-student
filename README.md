@@ -18,7 +18,7 @@ The age of abalone is determined by cutting the shell through the cone, staining
 
 **Goal**: predict the age of abalone (column "Rings") from physical measurements ("Shell weight", "Diameter", etc...)
 
-You can download the dataset on the [Kaggle page](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset)
+You can download the dataset on the [Kaggle page](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset) and put it in the data folder
 
 </details>
 
