@@ -6,21 +6,24 @@
 FROM python:3.10-slim
 
 # Définir le répertoire de travail
-WORKDIR /app
+WORKDIR /xhec-mlops-project-student
 
 # Copier les fichiers de l'application
-COPY src/web_service /app/src/web_service
-COPY bin/run_services.sh /app/bin/run_services.sh
-COPY requirements.txt /app/requirements.txt
-
-# Installer les dépendances
-RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
 
 # Rendre le script exécutable
-RUN chmod +x /app/bin/run_services.sh
+RUN chmod +x ./bin/run_services.sh
+RUN pip install pip-tools
+# Install dependencies
+RUN pip-compile requirements.in
+RUN pip-compile requirements-dev.in
+RUN pip install -r requirements.txt
+RUN pip install -r requirements-dev.txt
+RUN pip install pre-commit
+RUN pre-commit run --all-files --show-diff-on-failure
 
-# Exposer les ports de l'API et du serveur Prefect
-EXPOSE 8001 4201
-
-# Commande pour lancer les services
-CMD ["/app/bin/run_services.sh"]
+EXPOSE 8001
+EXPOSE 4002
+# Health check to ensure the application is running
+HEALTHCHECK CMD curl --fail http://localhost:4201/_stcore/health || exit 1 && curl --fail http://localhost:8001/_stcore/health || exit 1
+ENTRYPOINT ["./bin/run_services.sh"]
