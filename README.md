@@ -6,7 +6,6 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
-[![Linting: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-informational?logo=pre-commit&logoColor=white)](https://github.com/artefactory/xhec-mlops-project-student/blob/main/.pre-commit-config.yaml)
 </div>
 
@@ -34,11 +33,44 @@ You can download the dataset on the [Kaggle page](https://www.kaggle.com/dataset
     - [Pull requests in this project](#pull-requests-in-this-project)
     - [Tips to work on this project](#tips-to-work-on-this-project)
 
+## Get Started
+
+### 1. Clone the Repository
+First, clone the forked repository to your local machine. Use the following command:
+
+`git clone https://github.com/AlexandreFln/xhec-mlops-project-student`
+
+and navigate into the correct directory
+`cd xhec-mlops-project-student`
+
+
+### 2. Set Up the Conda Environment
+This project uses an `environment.yml` file to manage dependencies. To create the environment, run the following command:
+
+`conda env create --file environment.yml`
+
+This will create a conda environment with the specified Python version (as defined in the environment.yml file) and install the required dependencies, including pip-tools.
+
+Once the environment is created, activate it with the following command:
+
+`conda activate mlops_project_9`
+
+### 3. Download the Abalone Dataset
+Download the dataset from Kaggle and place it in the appropriate directory as required by the project structure.
+
+You can download the dataset from this link: [Abalone Dataset on Kaggle](https://archive.ics.uci.edu/ml/datasets/abalone).
+
+Ensure that you place the dataset in the correct folder (e.g., a `data/` directory) as outlined in the project structure.
+
+
+After completing these steps, you will be ready to run the project and start working on industrializing the abalone age prediction model.
+
+
 ## Deliverables and notation
 
 ### Deliverables
 
-The deliverable of this project is a copy of this repository with the industrialization of the Abalone age prediction model. We expect to see: 
+The deliverable of this project is a copy of this repository with the industrialization of the Abalone age prediction model. We expect to see:
 
 1. a workflow to train a model using Prefect
 - The workflows to train the model and to make the inference (prediction of the age of abalone) are in separate modules and use Prefect `flow` and `task` objects
@@ -59,24 +91,24 @@ Each of your pull requests will be graded based on the following criteria:
   - use of docstrings and type hinting
 - **Formatting**
   - respect of clear code conventions
-  
+
   *P.S. you can use a linter and automatic code formatters to help you with that*
 
 - Proper **Functioning** of the code
   - the code must run without bugs
 
-Bseides the evaluation of the pull requests, we will also evaluate: 
+Bseides the evaluation of the pull requests, we will also evaluate:
 - **Reproducibility** and clarity of instructions to run the code (we will actually try to run your code)
-  - Having a clear README.md with 
+  - Having a clear README.md with
     - the context of the project
     - the name of the participants and their github users
     - the steps to recreate the Python environment
     - the instructions to run all parts of the code
-- Use of *Pull Requests* (see below) to coordinate your collaboration 
+- Use of *Pull Requests* (see below) to coordinate your collaboration
 
 ## Steps to reproduce to build the deliverable
 
-To help you with the structure and order of steps to perform in this project, we created different pull requests templates. 
+To help you with the structure and order of steps to perform in this project, we created different pull requests templates.
 Each branch in this repository corresponds to a future pull request and has an attached markdown file with the instructions to perform the tasks of the pull request.
 Each branch starts with a number.
 You can follow the order of the branches to build your project and collaborate.
@@ -102,7 +134,7 @@ You can follow the order of the branches to build your project and collaborate.
    > ```bash
    > git checkout branch_number_i
    > git pull origin master
-   > # At this point, you might have a VIM window opening, you can close it using the command ":wq" 
+   > # At this point, you might have a VIM window opening, you can close it using the command ":wq"
    > git push
    > ```
     - Read and **follow** all the instructions in the the PR instructions file
