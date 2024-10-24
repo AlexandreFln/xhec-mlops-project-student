@@ -5,17 +5,33 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "xhec-mlops-project-student"
 authors = [
-  { name = "username", email = "user@email.com" },
-] # TODO: add authors here
+  { name = "Charles De Cian", email = "charles.de-cian@hec.edu" }, { name = "Alexandre Foulon", email = "alexandre.foulon@hec.edu" },
+  { name = "Artus Mathieu", email = "artus-mathieu@hec.edu" },  { name = "Antoine Gosset", email = "antoine-gosset@hec.edu" }
+]
 description = "This repository contains the solution for the X-HEC MLOps Project on the industrialization of Abalone age prediction model."
 version = "0.0.1"
 readme = "README.md"
-requires-python = ">3.10" # TODO: update this version
+requires-python = ">3.9"
 
 [project.urls]
-"Homepage" = "https://github.com/artefactory/xhec-mlops-project-student" # TODO: update this URL
+"Homepage" = "https://github.com/AlexandreFln/xhec-mlops-project-student"
 
 [tool.setuptools]
 packages = ["src"]
 
-# TODO: add black, isort, and ruff (optional - not needed if using flake8) configurations here
+
+[tool.black]
+line-length = 120
+target-version = ['py39', 'py310']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  | lib/detection
+  | lib/trackers
+  | .ipynb_checkpoints
+  | __pycache__
+)/
+'''
+[tool.isort]
+profile = "black"
+known_first_party = ["lib"]
